@@ -1,0 +1,42 @@
+[project]
+name = "fastapi-bin"
+version = "0.0.1"
+description = "Test"
+authors = [
+    { name="Tommaso Comparin", email="tommaso.comparin@exact-lab.it" },
+]
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "fastapi >= 0.136.0, <0.137.0",
+    "uvicorn >= 0.46.0, <0.47.0",
+]
+
+[dependency-groups]
+dev = ["pyinstaller"]
+
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+# See https://docs.astral.sh/uv/concepts/build-backend/#file-inclusion-and-exclusion
+[tool.uv.build-backend]
+module-name = "fastapi_bin"
+source-exclude = ["tmp*"]
+wheel-exclude = ["tmp*"]
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "TID"]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "parents"
