@@ -1,7 +1,7 @@
 # fastapi-pyinstaller
 
 ```console
-$ uv run pyinstaller -D ./src/fastapi_bin/__init__.py
+$ uv run pyinstaller --clean -D ./src/fastapi_bin/__init__.py --name start-app
 [...]
 
 $ ./dist/__init__/__init__ 
