@@ -24,10 +24,6 @@ dev = ["pyinstaller"]
 requires = ["uv_build>=0.9.18,<0.10.0"]
 build-backend = "uv_build"
 
-# See https://docs.astral.sh/uv/concepts/build-backend/#file-inclusion-and-exclusion
-[tool.uv.build-backend]
-module-name = "fastapi_bin"
-
 [tool.ruff]
 line-length = 80
 
